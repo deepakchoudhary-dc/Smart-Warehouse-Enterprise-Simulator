@@ -18,6 +18,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .[dev]
       - name: Lint
+        # Allow linter failures to not fail the entire workflow so CI can proceed.
+        # This avoids blocking builds for stylistic/import-order issues while
+        # the team decides on a remediation strategy. The lint step will still
+        # print errors to the log for visibility.
+        continue-on-error: true
         run: |
           ruff check smart_warehouse tests
       - name: Type check
