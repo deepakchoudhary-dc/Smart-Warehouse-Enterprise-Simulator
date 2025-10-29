@@ -1,0 +1,5 @@
+mqtt:
+  broker_host: "broker.hivemq.com"
+
+logging:
+  level: DEBUG

@@ -1,0 +1,45 @@
+environment: dev
+
+grid:
+  width: 20
+  height: 15
+  cell_size: 40
+
+timing:
+  update_interval_ms: 150
+  package_spawn_rate_s: 3
+
+colors:
+  grid: "#cccccc"
+  background: "#ecf0f1"
+  obstacle: "#7f8c8d"
+  package: "#e67e22"
+  path: "#3498db"
+  dropoff: "#8e44ad"
+  payload: "#c0392b"
+  robots:
+    - "#2980b9"
+    - "#c0392b"
+    - "#27ae60"
+    - "#f39c12"
+    - "#8e44ad"
+
+mqtt:
+  broker_host: "broker.hivemq.com"
+  port: 1883
+  topic_reservations: "smart_warehouse/cell_reservations"
+  use_tls: false
+
+database:
+  enabled: false
+  url: "postgresql+asyncpg://warehouse:warehouse@localhost:5432/warehouse"
+  pool_size: 5
+  max_overflow: 10
+  echo: false
+
+telemetry:
+  otlp_endpoint: null
+  metrics_enabled: true
+
+logging:
+  level: INFO
